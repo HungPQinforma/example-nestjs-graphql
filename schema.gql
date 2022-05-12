@@ -1,0 +1,72 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Post {
+  id: Int!
+
+  """Post content"""
+  content: String!
+}
+
+type User {
+  id: Int!
+
+  """Fullname"""
+  username: String!
+
+  """Email address"""
+  email: String!
+
+  """Hashed password"""
+  password: String!
+
+  """Activation status"""
+  status: Int
+}
+
+input user {
+  id: Int!
+
+  """Fullname"""
+  username: String!
+
+  """Email address"""
+  email: String!
+
+  """Hashed password"""
+  password: String!
+
+  """Activation status"""
+  status: Int
+}
+
+type Query {
+  users: [User!]!
+  posts: [Post!]!
+  post(id: Int!): Post!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  createPost(createPostInput: CreatePostInput!): Post!
+}
+
+input CreateUserInput {
+  """User input: Fullname"""
+  username: String!
+
+  """User input: Email address"""
+  email: String!
+
+  """User input: Hashed password"""
+  password: String!
+}
+
+input CreatePostInput {
+  """Post input: content"""
+  username: String!
+
+  """Post input: belonged user"""
+  user: user!
+}
