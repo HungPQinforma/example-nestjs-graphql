@@ -21,6 +21,7 @@ export class Post {
   content: string;
 
   @ManyToOne(() => User, (user) => user.posts)
+  @Field(() => User, { description: 'Belonged user' })
   user: User;
 
   @CreateDateColumn()

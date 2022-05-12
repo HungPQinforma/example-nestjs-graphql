@@ -7,6 +7,9 @@ type Post {
 
   """Post content"""
   content: String!
+
+  """Belonged user"""
+  user: User!
 }
 
 type User {

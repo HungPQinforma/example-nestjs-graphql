@@ -18,9 +18,11 @@ export class User {
   @Field(() => String, { description: 'Email address' })
   email: string;
 
+  @Column()
   @Field(() => String, { description: 'Hashed password' })
   password: string;
 
+  @Column()
   @Field(() => Int, { description: 'Activation status', nullable: true })
   status: number;
 
