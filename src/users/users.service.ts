@@ -19,7 +19,7 @@ export class UsersService {
     return user;
   }
 
-  findAll() {
-    return this.userRepository.find();
+  async findAll() {
+    return await this.userRepository.find();
   }
 }
